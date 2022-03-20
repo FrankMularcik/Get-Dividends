@@ -4,6 +4,7 @@ var DIV_COL = 0;
 var FREQ_COL = 0;
 var EX_DATE_COL = 0;
 var PAY_DATE_COL = 0;
+var POLYGON_KEY = "your key here";
 var SUMMARY_SHEET_NAME = "Summary";
 //
 
