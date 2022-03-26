@@ -1,5 +1,5 @@
 // edit these variables
-var SPREADSHEET_ID = "1ARRPUr1e-DPBu9qTc07Pqjtee-Dfq3Cc1nBmuGeO7ow";
+var SPREADSHEET_ID = "";
 var SUMMARY_SHEET_NAME = "Summary";
 var GET_TICKER_COL = 1;
 var POST_DIV_COL = 10;
