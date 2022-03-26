@@ -18,6 +18,7 @@ For a full walkthrough on how to set the script up, check out my [YouTube video]
     5. POST_FREQ_COL is the column that you want the script to enter the number of times per year that the company pays a dividend.
     6. POST_EX_DATE_COL is the column that you want the script to enter the ex dividend date in.
     7. POST_PAY_DATE_COL is the column that you want the script to enter the pay date in.
+    8. FIRST_TICKER_ROW is the first row that a ticker symbol appears in in your spreadsheet.
 6. Note: If you don’t want one of the values to be entered anywhere in your spreadsheet, just set the corresponding POST column variable equal to 0.
 7. Create one more file in the Apps Script Editor, delete the contents, and then past the contents of Keys.gs into it.  You will edit the POLYGON_KEY variable later.
 8. Go to the [Polygon website](https://polygon.io/) (Polygon.io).  Then click “Get your free API key”.
