@@ -80,3 +80,10 @@ function YearsToMs(years)
 {
   return years*365*24*60*60*1000;
 }
+
+function GetSheet(name)
+{
+  var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  return ss.getSheetByName(name);
+}
+
