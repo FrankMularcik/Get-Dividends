@@ -2,7 +2,9 @@
 
 A JavaScript project that can be added to your Google Sheets dividend portfolio spreadsheet that will automatically update the dividend amount, dividend frequency, ex dividend date, and dividend pay date.
 
-For a full walkthrough on how to set the script up, check out my [YouTube video](https://youtu.be/p1ZSY8YkGeM) where I guide you through the process: 
+For a full walkthrough on how to set the script up, check out my [YouTube video](https://youtu.be/p1ZSY8YkGeM) where I guide you through the process.  And check out [this video]() for instructions on the updated features.
+
+Feel free to copy this spreadsheet to get you started as well: https://docs.google.com/spreadsheets/d/1z9cZji2wxNzrupr_zd-cOe7uSlaEdz5vzUu-SbO-5N0/edit#gid=0
 
 ## Steps:
 
@@ -18,7 +20,13 @@ For a full walkthrough on how to set the script up, check out my [YouTube video]
     5. POST_FREQ_COL is the column that you want the script to enter the number of times per year that the company pays a dividend.
     6. POST_EX_DATE_COL is the column that you want the script to enter the ex dividend date in.
     7. POST_PAY_DATE_COL is the column that you want the script to enter the pay date in.
-    8. FIRST_TICKER_ROW is the first row that a ticker symbol appears in in your spreadsheet.
+    8. POST_PAYOUT_COL is the column that you want the script to enter the payout ratio in.
+    9. POST_YEARS_INCREASING_COL is the column that you want the script to enter the years of increasing dividends in.
+    10. POST_CAGR_COL is the columnt that you want the script to enter the 5 year dividend cagr in.
+    11. FIRST_TICKER_ROW is the first row that a ticker symbol appears in in your spreadsheet.
+    12. Google Apps Scripts Functions have a maximum execution time of 6 minutes.  So if your portfolio has a lot of companies (more than 25-30 would be my guess), the script will end before all the tickers have been updated.  So I created the VarSheet to track what row we are on if the script ends early so that all of the tickers get updated.  So VAR_SHEET_NAME is the name of the sheet that you are going to track some variables in (for now its just the ticker row; see the example spreadsheet for what this sheet should look like).  If you just copy the VarSheet from my example you shouldn't have to change this variable or the next two.
+    13. GET_TICKER_ROW is the row of the ticker row on VarSheet.
+    14. GET_TICKER_COL is the column of the ticker row on VarSheet.
 6. Note: If you don’t want one of the values to be entered anywhere in your spreadsheet, just set the corresponding POST column variable equal to 0.
 7. Create one more file in the Apps Script Editor, delete the contents, and then past the contents of Keys.gs into it.  You will edit the POLYGON_KEY variable later.
 8. Go to the [Polygon website](https://polygon.io/) (Polygon.io).  Then click “Get your free API key”.
