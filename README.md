@@ -2,7 +2,7 @@
 
 A JavaScript project that can be added to your Google Sheets dividend portfolio spreadsheet that will automatically update the dividend amount, dividend frequency, ex dividend date, and dividend pay date.
 
-For a full walkthrough on how to set the script up, check out my [YouTube video](https://youtu.be/p1ZSY8YkGeM) where I guide you through the process.  And check out [this video]() for instructions on the updated features.
+For a full walkthrough on how to set the script up, check out my [YouTube video](https://youtu.be/p1ZSY8YkGeM) where I guide you through the process.  And check out [this video](https://youtu.be/vDd0hcNd09k) for instructions on the updated features.
 
 Feel free to copy this spreadsheet to get started as well: https://docs.google.com/spreadsheets/d/1z9cZji2wxNzrupr_zd-cOe7uSlaEdz5vzUu-SbO-5N0/edit#gid=0
 
