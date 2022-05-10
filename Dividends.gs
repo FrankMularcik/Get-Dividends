@@ -168,7 +168,7 @@ function GetYearsIncreasingDiv(ticker)
   text = UrlFetchApp.fetch("https://www.marketbeat.com/stocks/" + exchangeStr + "/" + ticker + "/dividend/").getContentText();
   index = text.indexOf("Dividend Increase ");
   searchString = text.substring(index, index + 300);
-  index = searchString.indexOf("Years");
+  index = searchString.indexOf("Year");
   var backIndex = 1;
   var increaseYears = 0;
   var lastIncreaseYears = 0;
