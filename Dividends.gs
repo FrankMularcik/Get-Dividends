@@ -28,7 +28,7 @@ function AddDividends()
   {
     var data = GetDividend(ticker);
     var response = data[0];
-    if (response != 0)
+    if (response != 0 && response != null)
     {
       var date = new Date(response.ex_dividend_date);
       var div = "";
@@ -70,12 +70,13 @@ function AddDividends()
             summarySheet.getRange(row, POST_CAGR_COL).setValue(cagr - 1);
           }
         }
+        if (POST_YEARS_INCREASING_COL > 0)
+        {
+          summarySheet.getRange(row, POST_YEARS_INCREASING_COL).setValue(GetYearsIncreasingDiv(ticker));
+        }
       }
     }
-    if (POST_YEARS_INCREASING_COL > 0)
-    {
-      summarySheet.getRange(row, POST_YEARS_INCREASING_COL).setValue(GetYearsIncreasingDiv(ticker));
-    }
+    
     var now = new Date();
     if (now.getTime() > end) // store next ticker row and end (out of time)
     {
