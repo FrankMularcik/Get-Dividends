@@ -39,6 +39,20 @@ function AddDividends()
       if (new Date() - date < YearsToMs(1))
       {
         div_freq = response.frequency;
+        var index = 1;
+        while (div_freq == 0)
+        {
+          if (index >= data.length)
+          {
+            return;
+          }
+          else
+          {
+            response = data[index];
+            div_freq = response.frequency;
+            index++;
+          }
+        }
         div = response.cash_amount * div_freq;
         ex_date = response.ex_dividend_date;
         pay_date = response.pay_date;
