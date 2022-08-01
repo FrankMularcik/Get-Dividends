@@ -38,6 +38,13 @@ function AddDividends()
       // ensures latest dividend data is current
       if (new Date() - date < YearsToMs(1))
       {
+        var date_index = 0;
+        while (date > new Date())
+        {
+          response = data[date_index];
+          date_index++;
+          date = new Date(data[date_index].pay_date);
+        }
         div_freq = response.frequency;
         var index = 1;
         while (div_freq == 0)
