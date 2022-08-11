@@ -10,6 +10,7 @@ var POST_PAYOUT_RATIO_COL = 28;
 var POST_YEARS_INCREASING_COL = 20;
 var POST_CAGR_COL = 26;
 var FIRST_TICKER_ROW = 2;
+var TICKER_COL = 2;
 
 var VAR_SHEET_NAME = "VarSheet";
 var GET_TICKER_COL = 1;
@@ -23,7 +24,7 @@ function AddDividends()
   var summarySheet = GetSheet(SUMMARY_SHEET_NAME);
   var varSheet = GetSheet(VAR_SHEET_NAME);
   var row = varSheet.getRange(GET_TICKER_ROW, GET_TICKER_COL).getValue();
-  var ticker = summarySheet.getRange(row, GET_TICKER_COL).getValue();
+  var ticker = summarySheet.getRange(row, TICKER_COL).getValue();
   do
   {
     var data = GetDividend(ticker);
@@ -106,7 +107,7 @@ function AddDividends()
     }  
     Wait(12100); // max of 5 polygon calls per minute so wait 12.1 seconds after each call
     row++;
-    ticker = summarySheet.getRange(row, GET_TICKER_COL).getValue();
+    ticker = summarySheet.getRange(row, TICKER_COL).getValue();
   } while (ticker != "");
   varSheet.getRange(GET_TICKER_ROW, GET_TICKER_COL).setValue(FIRST_TICKER_ROW);
 }
