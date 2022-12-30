@@ -86,7 +86,7 @@ function AddDividends()
         } 
         if (POST_CAGR_COL > 0)
         {
-          var cagr = Get5YearCAGR(data);
+          var cagr = Get5YearCAGR(data, div_freq);
           if (cagr != 0)
           {
             summarySheet.getRange(row, POST_CAGR_COL).setValue(cagr - 1);
@@ -143,10 +143,10 @@ function MinutesToMs(min)
   return min*60*1000;
 }
 
-function Get5YearCAGR(array) {
-  const quarterArray = [];
+function Get5YearCAGR(array, divs_per_year) {
+  const divArray = [];
   const yearArray = [];
-  if (array.length < 24)
+  if (array.length < divs_per_year * 6)
   {
     return 0;
   }
@@ -154,11 +154,11 @@ function Get5YearCAGR(array) {
   {
     yearArray[i] = 0;
   }
-  for (var i = 0; i < 24; i++)
+  for (var i = 0; i < divs_per_year * 6; i++)
   {
-    quarterArray[i] = array[i].cash_amount;
+    divArray[i] = array[i].cash_amount;
     var index = Math.trunc(i / 4);
-    yearArray[index] += quarterArray[i];
+    yearArray[index] += divArray[i];
   }
 
   var newDiv = yearArray[0];
